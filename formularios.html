@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+   
+<div class="modal fade" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ventana de registros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <section class="row container-fluid">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <div class="input-group">
+                                <i class="fa fa user"></i>
+                                  
+                            </div>
+                            <input  type="text" class="form-control" id="nombre"/>
+                            <small class="form-text text-muted">Pon tu nombre completo</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="text" class="form-control" />
+                            <small class="form-text text-muted">Pon tu correo electronico completo</small>
+                        </div>
+                        <div class="for-group text-right ">
+                            <button class="btn btn-outline-primary btn-block">
+                                <i class="fas fa-cat"></i>
+                                Inscribirme
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <button class="btn btn-primary" 
+    data-target="#mimodal"
+    data-role="modal"
+    data-toggle="modal"
+    >
+        Abrir ventana modal
+</button>
+</body>
+<script>
+    $("#guardar").on("Click",function())
+    {
+        var $nombre=$("#nombre");
+        var$email=$("email");
+
+        if($nombre.val().length == 0)
+        {
+            $nombre.addClass("alert alert-danger")
+                  
+        }
+    };
+
+</script>
+</html>
