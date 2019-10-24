@@ -32,7 +32,7 @@
         $password = $usuario["contrasenia"];
         $email = $usuario["email"];
         $lugares = $usuario["lugares"];
-        echo "<p> $nombre </p>";
+       # echo "<p> $nombre </p>";
 
         echo "<tr>
             <td>$nombre</td>
