@@ -13,12 +13,12 @@
             <div class="col-md-6">
                 <form action="">
                     <div class="form-group">
-                    <label for="">Usuario</label>
-                    <input type="text" class="form-control">
+                        <label for="">Usuario</label>
+                        <input type="text" class="form-control">
                     </div>
                     <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control">
                     </div>
                     <button class="btn btn-primary">Envia datos</button>
                 </form>
