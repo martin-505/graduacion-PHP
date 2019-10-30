@@ -20,6 +20,8 @@
         $resultado = $conexionBD->query($statement);
         if($resultado->num_rows>0)
         {
+            session_start();
+            $_SESSION["usuario"]=$usuario;
             echo "<h1 class=\"text-success\">Bienvenid@".$usuario."</h1>";
         }
         else
