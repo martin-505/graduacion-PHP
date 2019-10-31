@@ -13,16 +13,43 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <script src="js/jquery-3.4.1.main.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script>
         $(function(){
-            $boton = $("button";
+            $boton = $("button");
+            $spin = $(".fa-spin");
             $boton.on("click",function(evento){
-                evento.preventDefault();
-                var usuario = $('[name]="usuario"');
+                evento.preventDefault();   
+                $boton.prop("disabled",true);
+                $spin.fadeIn();
+                var usuario = $('[name = "usuario"]').val();
+                var contrasenia = $('[name = "contrasenia"]').val();
 
                 $.ajax({
-
+                    url:"resultado.php",
+                    //dataType: "json",
+                    method: "POST",
+                    data:
+                    {
+                        usuario: usuario,
+                        contrasenia: contrasenia
+                    }
+                })
+                .done(function(informacion)
+                {
+                    var json = JSON.parse(informacion);
+                    console.log(json);
+                    $boton.prop("disabled",false);
+                    $spin.fadeOut();
+                    if(json.codigo == "0")
+                    {
+                        $("#mensaje").html(json.mensaje);
+                    }
+                    else if(json.codigo == "1")                   
+                    {
+                        window.location.href = "vip.php";
+                    }
+                    //$("#mensaje").html(informacion);
                 });
             });
         });
@@ -50,6 +77,9 @@
                     <button class="btn btn-primary">Envia datos</button>
 
                     <i class="fas fa-cog fa-spin"></i>
+                    <div id="mensaje">
+
+                    </div>
 
                 </form>
             </div>
