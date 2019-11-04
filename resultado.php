@@ -4,7 +4,7 @@
         $usuario=$_POST["usuario"];
         $contrasenia = hash("whirlpool",$_POST["contrasenia"]);
 
-        $statement = "SELECT contrasenia
+        $statement = "SELECT id, nombre 
                         FROM usuarios
                         WHERE contrasenia ='$contrasenia'
                         AND nombre = '$usuario'";
@@ -12,6 +12,7 @@
         if($resultado->num_rows>0)
         {
             session_start();
+            $_SESSION["datosUsuario"]= mysqli_fetch_assoc($resultado);
             $_SESSION["usuario"]=$usuario;
            $datos=
            [
