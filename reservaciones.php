@@ -11,6 +11,47 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/all.min.css"/>
     <style>
+        body{
+            display: grid;
+
+        }
+
+        .padre{
+            background-color:transparent;
+            border: 0px solid black;
+            padding: 0 1rem;
+            margin: 1rem;
+            height: 150px;
+            display: flex;
+        }
+
+        .hijo2{
+            background-color: #9DBBAE;
+            width: 200px;
+            height: 147px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: white;
+            justify-content: center;
+        }
+
+        .hijo1{
+            background-color: #9DBBAE;
+            width: 650px;
+            height: 147px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: white;
+            justify-content: center;
+
+        }
+
+        img{
+            height: 105px;
+            width: 134px;
+        }
         .salon{
             margin: 40px;
         }
@@ -99,8 +140,8 @@
             echo $mesas;
         ?>
         <div class="padre">
-            <div class="hijo1"><img src="" alt=""></div>
-            <div class="hijo2"></div>
+            <div class="hijo1">Pista<img src="img/bailongo.png" alt=""></div>
+            <div class="hijo2">Mesa de Dulces<img src="img/dulces.png" alt=""></div>
         </div>
     </section>
 
