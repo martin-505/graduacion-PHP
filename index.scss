@@ -1,5 +1,5 @@
-$jumbotron-bg: transparent;
-$jumbotron-color: #fff;
+$jumbotron-bg: rgba(236, 218, 218, 0.671);
+$jumbotron-color: rgb(0, 0, 0);
 $blue: #250777;
 @import"node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -8,5 +8,41 @@ padding{
     padding: 2.5em;
     background: #fff; 
 }
+
+body{
+    background: url(../img/fondochido3.jpg);
+}
+
+.jumbotron{
+    box-shadow: 10px 10px 10px black;
+    margin-top: 80px;
+    margin-left: 50px;
+    
+}
+
+.carousel-inner img{
+    height: 205px;
+}
+
+.navbar-brand img{
+    height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar .navbar-expand-lg .navbar-light .bg-dark>img{
+    width: 30px;
+    height: 30px;
+}
+
+.col-md-4 img{
+    width: 100px;
+    height: 100px;
+}
+
+
+
 //carpeta de donde esta el archivo #sass index.scss css/index.css or --watch scss:css
 

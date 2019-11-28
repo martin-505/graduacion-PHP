@@ -98,6 +98,10 @@
             include ("procesarplantillas.php");
             echo $mesas;
         ?>
+        <div class="padre">
+            <div class="hijo1"><img src="" alt=""></div>
+            <div class="hijo2"></div>
+        </div>
     </section>
 
     <div class="modal" id="ventanaConfirmacion"tabindex="-1" role="dialog">

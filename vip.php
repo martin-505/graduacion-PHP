@@ -90,7 +90,7 @@ if (!isset($sesion)){
         {
             text-align: center;
             position: fixed;
-            top: 0;
+            top: 70px;
             left: 0;
         }
         aside.indicadores img 
@@ -100,24 +100,42 @@ if (!isset($sesion)){
     </style>
 </head>
 <body>
-    <section class="container-fluid">
-        <section class="row">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand" href="invitacion.html"><img src="img/índice.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="reservaciones.php">Reserevar tus lugares</a>
+                    </li>
+                  </ul>
+                </div>
+</nav>
+
+<section class="container" id="Info">
+                    <div class="jumbotron">
+                    <section class="container-fluid">
+        <section class="row text-center">
             <div class="col-md-12">
                 <h1>Seleccione el paquete para la cena</h1>
             </div>
-            <div class="col-md-d">
+            <div class="col-md-4">
                 <h4>Basico</h4>
                 <img src="img/jodido.png" alt="platillo1">
                 <input type="number" id="paquete1" value="0" min="0" max="10">
                 <h4 data-precio="100">$0</h4>  
             </div>
-            <div class="col-md-d">
+            <div class="col-md-4">
                 <h4>Medio</h4>
                 <img src="img/medio.png" alt="platillo2">
                 <input type="number" id="paquete2" value="0" min="0" max="10">
                 <h4 data-precio="500">$0</h4>
                 </div>
-            <div class="col-md-d">
+            <div class="col-md-4">
                 <h4>Premiun</h4>
                 <img src="img/plus.png" alt="platillo3">
                 <input type="number" id="paquete3" value="0" min="0" max="10">
@@ -131,6 +149,13 @@ if (!isset($sesion)){
         </section>
     </section>
 
+                    
+                    
+                                
+                    </div>
+                         
+</section>
+    
     <div class="modal" tabindex="-1" role="dialog" id="modalConfirmar">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
