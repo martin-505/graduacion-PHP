@@ -26,6 +26,8 @@ $statement = "INSERT INTO reservacion (id_silla, id_usuario, paquete)
 
 $resultado = $conexionBD->query($statement);
 
+
+
 if($resultado){
     echo "Registro exitoso";
 }else{

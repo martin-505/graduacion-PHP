@@ -144,6 +144,7 @@
             <div class="hijo2">Mesa de Dulces<img src="img/dulces.png" alt=""></div>
         </div>
     </section>
+    
 
     <div class="modal" id="ventanaConfirmacion"tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -164,11 +165,38 @@
     </div>
   </div>
 </div>
+        <?php
+                $consulta123 = "SELECT lugares FROM usuarios_paquete";
+                $resultado123 = $conexionBD->query($consulta123);
+                var_dump($resultado123);
+                die;
+                $filas123 = $resultado123->num_rows;
 
+                $consulta2="SELECT * FROM reservacion";
+                $resultado_= $conexionBD->query($consulta2);
+                $filas2=$resultado_->num_rows;
+                $usuarios_= array();
+                while($fila1=$resultado_->fetch_assoc())
+                {
+                    $usuarios_[]=$fila1;
+                }
+                    echo("Solo ".$filas2." lugares fueron apartados");
+
+               
+        ?>
+        <?php
+                $numero=140-$filas2;
+                echo("Quedan ".$numero." de 140 sillas disponibles!");
+        ?>
     <script>
+
         var idSilla = 0;
+        
 
         $(function() {
+           
+
+            
             $('[data-toogle="tooltip"]').tooltip();
             $("#ventanaConfirmacion").modal({show:false});
 
@@ -188,6 +216,8 @@
             });
 
             $("#btnAceptar").on("click", function(){
+                
+
                 $.ajax({
                     url: "confirmarReservacion.php",
                     method: "POST",
