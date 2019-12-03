@@ -168,7 +168,7 @@
                     $idUsuario = $_SESSION["datosUsuario"]["id"];
                     
                     $result = mysql_query("SELECT (SELECT SUM(lugares) FROM usuarios_paquete WHERE idUsuario =$idUsuario)
-                            -(SELECT SUM(paquete) FROM reservacion where id_usuario = $idUsuario) AS totalsum FROM DUAL");
+                            -(SELECT COUNT(paquete) FROM reservacion where id_usuario = $idUsuario) AS totalsum FROM DUAL");
                     
                     $row = mysql_fetch_assoc($result); 
                     
