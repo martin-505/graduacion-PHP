@@ -139,7 +139,7 @@
             include ("procesarplantillas.php");
             echo $mesas;
         ?>
-        <?php
+        <<?php
                 // session_start();
                 // include("conexion.php");
 
@@ -174,21 +174,16 @@
                     
                     $sum = $row['totalsum'];
                     if($filas2>0){
-
                         if($sum>0){
-
                             echo("<h1>Solo a seleccionado ".$filas2." lugares.</h1>");
                             echo ("<h1>Solo le quedan ".$sum." lugares disponibles para reservar.</h1>");
-                            }
-                            else if(!$sum>=0){
-                                echo'<script languaje = "javascript">';
-                                echo 'window.location.href = "reservacciones.php"';
-                                echo'</script>';
+                            }else{
+                                echo("<h1>Ya no quedan mas lugares</h1>");
                             }
                     }else{
                         echo("<h1>Seleccione una silla para continuar.</h1>");
                     }
-        ?>
+        ?>!-----  -->
         <?php
                 $numero=140-$filas2;
                 echo("Quedan ".$numero." de 140 sillas disponibles!");
@@ -222,43 +217,43 @@
 </div>
     <script>
 
-        var idSilla = 0;
-        $(function() {
+        // var idSilla = 0;
+        // $(function() {
  
-            $('[data-toogle="tooltip"]').tooltip();
-            $("#ventanaConfirmacion").modal({show:false});
+        //     $('[data-toogle="tooltip"]').tooltip();
+        //     $("#ventanaConfirmacion").modal({show:false});
 
-            $(".silla").on("click", function(){
-                var reservada = $(this).hasClass("silla-reservada");
+        //     $(".silla").on("click", function(){
+        //         var reservada = $(this).hasClass("silla-reservada");
 
-                if(!reservada){
-                    idSilla = $(this).attr("data-id");
-                    $("#ventanaConfirmacion").modal("show");
-                }else{
+        //         if(!reservada){
+        //             idSilla = $(this).attr("data-id");
+        //             $("#ventanaConfirmacion").modal("show");
+        //         }else{
 
-                }
-            });
+        //         }
+        //     });
 
-            $("#btnCancelar").on("click", function(){
-                $("#ventanaConfirmacion").modal("hide");
-            });
+        //     $("#btnCancelar").on("click", function(){
+        //         $("#ventanaConfirmacion").modal("hide");
+        //     });
 
-            $("#btnAceptar").on("click", function(){
+        //     $("#btnAceptar").on("click", function(){
                 
 
-                $.ajax({
-                    url: "confirmarReservacion.php",
-                    method: "POST",
-                    data:{
-                        silla:idSilla
-                    }
-                })
-                .done(function(){
-                    $("#ventanaConfirmacion").modal("hide");
-                    window.location.href = "reservaciones.php";
-                });
-            });
-        });
+        //         $.ajax({
+        //             url: "confirmarReservacion.php",
+        //             method: "POST",
+        //             data:{
+        //                 silla:idSilla
+        //             }
+        //         })
+        //         .done(function(){
+        //             $("#ventanaConfirmacion").modal("hide");
+        //             window.location.href = "reservaciones.php";
+        //         });
+        //     });
+        // });
     </script>  
 </body>
 </html>
