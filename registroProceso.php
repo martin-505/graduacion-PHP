@@ -12,7 +12,9 @@
         $resultado = $conexionBD->query($statement);
         if($resultado)
         {
-            echo "si se inserto el registro";
+            echo'<script languaje = "javascript">';
+            echo 'window.location.href = "login.php"';
+            echo'</script>';
         }
         else
         {

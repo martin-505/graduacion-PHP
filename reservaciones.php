@@ -200,6 +200,32 @@
         </div>
     </section>
     
+    <div class="modal" id="ventanaConfirmacion"tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar reservacion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Confirmar reservacion?</p>
+        <div class="col-md-4">
+                <h4>Basico</h4>
+                <a href="#"><img src="img/jodido.png" alt="platillo1" id="numero1"></a>
+            </div>
+            <div class="col-md-4">
+                <h4>Medio</h4>
+                <a href="#"><img src="img/medio.png" alt="platillo2" id="numero2"></a> 
+            </div>
+            <div class="col-md-4">
+                <h4>Premium</h4>
+                <a href="#"><img src="img/plus.png" alt="platillo3" id="numero3"></a>
+            </div>
+      </div>
+    </div>
+</div>
 
     <div class="modal" id="ventanaConfirmacion"tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -223,10 +249,58 @@
     <script>
 
         var idSilla = 0;
+        var paquete1 = 1;
+        var paquete2 = 2;
+        var paquete3 = 3;
         $(function() {
  
             $('[data-toogle="tooltip"]').tooltip();
             $("#ventanaConfirmacion").modal({show:false});
+
+            $("#numero1").on("click", function(){
+                $.ajax({
+                    url: "confirmarReservacion.php",
+                    method: "POST",
+                    data:{
+                        silla:idSilla,
+                        paquete:paquete1
+                    }
+                })
+                .done(function(){
+                    $("#ventanaConfirmacion").modal("hide");
+                    window.location.href = "reservaciones.php";
+                });
+            });
+
+            $("#numero2").on("click", function(){
+                $.ajax({
+                    url: "confirmarReservacion.php",
+                    method: "POST",
+                    data:{
+                        silla:idSilla,
+                        paquete:paquete2
+                    }
+                })
+                .done(function(){
+                    $("#ventanaConfirmacion").modal("hide");
+                    window.location.href = "reservaciones.php";
+                });
+            });
+
+            $("#numero3").on("click", function(){
+                $.ajax({
+                    url: "confirmarReservacion.php",
+                    method: "POST",
+                    data:{
+                        silla:idSilla,
+                        paquete:paquete3
+                    }
+                })
+                .done(function(){
+                    $("#ventanaConfirmacion").modal("hide");
+                    window.location.href = "reservaciones.php";
+                });
+            });
 
             $(".silla").on("click", function(){
                 var reservada = $(this).hasClass("silla-reservada");
