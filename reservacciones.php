@@ -192,6 +192,7 @@
         <div class="padre">
             <div class="hijo1">Pista<img src="img/bailongo.png" alt=""></div>
             <div class="hijo2">Mesa de Dulces<img src="img/dulces.png" alt=""></div>
+            <button type ="button" class = "btn btn-primary" href="http://graduacion.epizy.com/Invitacion.html">Terminar reservacion</button>
         </div>
     </section>
     
